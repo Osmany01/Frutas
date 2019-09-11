@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:layout_marginBottom="@dimen/default_bottom_margin"
+            android:id="@+id/fruitItem"
+            style="@style/NormalTextRectangleButton"
+            android:background="@drawable/background_ground_lightest_rectangle"
+            android:paddingStart="@dimen/padding_sides_rectangle_button"
+            android:paddingEnd="@dimen/padding_sides_rectangle_button"
+            android:paddingTop="@dimen/default_padding_top"
+            android:paddingBottom="@dimen/default_padding_top"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="mango"/>
+</LinearLayout>

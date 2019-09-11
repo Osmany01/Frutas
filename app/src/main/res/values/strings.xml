@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fruits</string>
+    <string name="get_fruits_button">get</string>
+    <string name="error_message">Ups something went wrong!!</string>
+</resources>

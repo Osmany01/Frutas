@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginTop="@dimen/default_top_margin"
+              android:layout_marginEnd="@dimen/default_right_margin"
+              android:layout_marginStart="@dimen/default_left_margin">
+
+    <TextView
+            android:background="@drawable/background_ground_lightest_rounded_corners"
+            android:id="@+id/buttonGetFruits"
+            style="@style/NormalTextRoundedButton"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/get_fruits_button"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/recyclerViewFruits"
+            android:layout_marginTop="@dimen/dp_32"
+            android:layout_marginBottom="@dimen/default_bottom_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:visibility="visible"/>
+
+    <TextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_gravity="center"
+            style="@style/ErrorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/error_message"
+            android:visibility="gone"
+            tools:visibility="visible"
+    />
+</LinearLayout>
