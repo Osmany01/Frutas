@@ -1,6 +1,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item>
+    <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <solid android:color="@color/white" />
             <corners android:radius="@dimen/rounded_container_radius" />
@@ -10,11 +10,11 @@
     </item>
 
     <!-- PRESSED -->
-    <item>
+    <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <solid android:color="@color/white" />
+            <solid android:color="@color/grey_light" />
             <corners android:radius="@dimen/rounded_container_radius" />
-            <stroke android:color="@color/grey_light"
+            <stroke android:color="@color/grey_medium"
                     android:width="1dp"/>
         </shape>
     </item>
