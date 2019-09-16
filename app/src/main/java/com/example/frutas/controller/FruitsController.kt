@@ -3,6 +3,8 @@ package com.example.frutas.controller
 import com.example.frutas.apicall.getfruits.model.ApiFruits
 import com.example.frutas.apicall.getfruits.repository.GetFruitsApiRetrofit
 import com.example.frutas.apicall.getfruits.view.GetFruitsView
+import com.example.frutas.controller.mapper.PresentationFruitMapper
+import com.example.frutas.controller.model.PresentationFruits
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -13,6 +15,8 @@ class FruitsController(val getFruitsView: GetFruitsView) {
 
     val BASE_URL: String = "http://private-92b860-testfrutas.apiary-mock.com/"
     fun getFruits() {
+
+        val presentationFruitMapper = PresentationFruitMapper()
 
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -28,7 +32,10 @@ class FruitsController(val getFruitsView: GetFruitsView) {
                 if (result != null) {
 
                     getFruitsView.showLoader()
-                    getFruitsView.onGetFruitsSuccess(result as ArrayList<ApiFruits>)
+
+                    val presentationFruits : List<PresentationFruits> = ArrayList()
+
+                    getFruitsView.onGetFruitsSuccess(presentationFruitMapper.mapApiFruit(result) as ArrayList<PresentationFruits>)
                 }
             }
             override fun onFailure(call: Call<List<ApiFruits>>?, t: Throwable?) {

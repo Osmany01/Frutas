@@ -8,6 +8,7 @@ import com.example.frutas.R
 import com.example.frutas.apicall.getfruits.model.ApiFruits
 import com.example.frutas.apicall.getfruits.view.GetFruitsView
 import com.example.frutas.controller.FruitsController
+import com.example.frutas.controller.model.PresentationFruits
 import com.example.frutas.view.adapter.FruitAdapter
 import kotlinx.android.synthetic.main.fruits_layout.*
 
@@ -33,7 +34,7 @@ class FruitsActivity : AppCompatActivity(), GetFruitsView {
         }
     }
     //region CallBack
-    override fun onGetFruitsSuccess(result: ArrayList<ApiFruits>) {
+    override fun onGetFruitsSuccess(result: ArrayList<PresentationFruits>) {
 
         hideLoader()
         initRecyclerView(result)
@@ -49,7 +50,7 @@ class FruitsActivity : AppCompatActivity(), GetFruitsView {
 
     //region UI Helper
 
-    fun initRecyclerView(result: ArrayList<ApiFruits>) {
+    fun initRecyclerView(result: ArrayList<PresentationFruits>) {
 
         recyclerViewFruits.visibility = View.VISIBLE
         tvErrorMessage.visibility = View.GONE

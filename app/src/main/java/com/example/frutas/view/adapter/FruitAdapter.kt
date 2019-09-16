@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.frutas.R
 import com.example.frutas.apicall.getfruits.model.ApiFruits
+import com.example.frutas.controller.model.PresentationFruits
 import com.example.frutas.view.adapter.item.FruitsViewHolder
 
-class FruitAdapter(val mItems: ArrayList<ApiFruits>, val context: Context) :
+class FruitAdapter(val mItems: ArrayList<PresentationFruits>, val context: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -28,7 +29,7 @@ class FruitAdapter(val mItems: ArrayList<ApiFruits>, val context: Context) :
         return mItems.size
     }
 
-    fun addItems(itemsToAdd: List<ApiFruits>) {
+    fun addItems(itemsToAdd: List<PresentationFruits>) {
 
         mItems.addAll(itemsToAdd)
         notifyDataSetChanged()
