@@ -26,12 +26,14 @@ class FruitsController(val getFruitsView: GetFruitsView) {
                 val result = response?.body()
                 if (result != null) {
 
+                    getFruitsView.showLoader()
                     getFruitsView.onGetFruitsSuccess(result as ArrayList<ApiFruits>)
                 }
             }
             override fun onFailure(call: Call<List<ApiFruits>>?, t: Throwable?) {
                 t?.printStackTrace()
 
+                getFruitsView.hideLoader()
                 getFruitsView.onGetFruitsFail(t?.message.toString())
             }
         })

@@ -6,4 +6,6 @@ interface GetFruitsView {
 
     fun onGetFruitsSuccess(result: ArrayList<ApiFruits>)
     fun onGetFruitsFail(message: String)
+    fun showLoader()
+    fun hideLoader()
 }

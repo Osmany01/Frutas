@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fruits_layout.*
 
 class FruitsActivity : AppCompatActivity(), GetFruitsView {
 
-   private lateinit var mController : FruitsController
+    private lateinit var mController : FruitsController
 
     //endregion
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +35,13 @@ class FruitsActivity : AppCompatActivity(), GetFruitsView {
     //region CallBack
     override fun onGetFruitsSuccess(result: ArrayList<ApiFruits>) {
 
+        hideLoader()
         initRecyclerView(result)
     }
 
     override fun onGetFruitsFail(message: String) {
 
+        hideLoader()
         recyclerViewFruits.visibility = View.GONE
         tvErrorMessage.visibility = View.VISIBLE
     }
@@ -55,6 +57,16 @@ class FruitsActivity : AppCompatActivity(), GetFruitsView {
         recyclerViewFruits.layoutManager = LinearLayoutManager(this)
         recyclerViewFruits.adapter = FruitAdapter(result, this)
 
+    }
+
+    override fun showLoader() {
+
+        progress_bar.visibility = View.VISIBLE
+    }
+
+    override fun hideLoader() {
+
+        progress_bar.visibility = View.GONE
     }
     //endregion
 }
