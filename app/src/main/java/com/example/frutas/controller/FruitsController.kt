@@ -33,8 +33,6 @@ class FruitsController(val getFruitsView: GetFruitsView) {
 
                     getFruitsView.showLoader()
 
-                    val presentationFruits : List<PresentationFruits> = ArrayList()
-
                     getFruitsView.onGetFruitsSuccess(presentationFruitMapper.mapApiFruit(result) as ArrayList<PresentationFruits>)
                 }
             }
