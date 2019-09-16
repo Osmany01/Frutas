@@ -11,10 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class FruitsController(val getFruitsView: GetFruitsView) {
 
+    val BASE_URL: String = "http://private-92b860-testfrutas.apiary-mock.com/"
     fun getFruits() {
 
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("http://private-92b860-testfrutas.apiary-mock.com/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
